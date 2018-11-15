@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/BindingReportToCsvFile/Form1.cs) (VB: [Form1.vb](./VB/BindingReportToCsvFile/Form1.vb))
+* [Program.cs](./CS/BindingReportToCsvFile/Program.cs) (VB: [Program.vb](./VB/BindingReportToCsvFile/Program.vb))
+<!-- default file list end -->
 # How to: Bind a Report to a CSV file at runtime
 
 
