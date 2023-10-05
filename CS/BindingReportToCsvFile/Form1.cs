@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Excel;
 using DevExpress.XtraReports.Configuration;
+using DevExpress.XtraReports.UI;
 
-namespace BindingReportToCsvFile
-{
+namespace BindingReportToCsvFile {
     public partial class Form1 : Form
     {
         public Form1()
@@ -25,14 +18,16 @@ namespace BindingReportToCsvFile
             XtraReport report = new XtraReport();
 
             // Create a new Excel data source.
-            ExcelDataSource excelDataSource = new ExcelDataSource();
-            excelDataSource.FileName = "..//..//Northwind.csv";
+            ExcelDataSource excelDataSource = new ExcelDataSource {
+                FileName = "..//..//Northwind.csv"
+            };
 
             // Specify import settings.
-            CsvSourceOptions csvSourceOptions = new CsvSourceOptions();
-            csvSourceOptions.DetectEncoding = true;
-            csvSourceOptions.DetectNewlineType = true;
-            csvSourceOptions.DetectValueSeparator = true;
+            CsvSourceOptions csvSourceOptions = new CsvSourceOptions {
+                DetectEncoding = true,
+                DetectNewlineType = true,
+                DetectValueSeparator = true
+            };
             excelDataSource.SourceOptions = csvSourceOptions;
 
             // Define the data source schema.
@@ -46,8 +41,9 @@ namespace BindingReportToCsvFile
             report.DataSource = excelDataSource;
 
             // Add a detail band to the report.
-            DetailBand detailBand = new DetailBand();
-            detailBand.Height = 50;
+            DetailBand detailBand = new DetailBand {
+                Height = 50
+            };
             report.Bands.Add(detailBand);
 
             // Create a new label.
@@ -61,7 +57,6 @@ namespace BindingReportToCsvFile
 
             // Show the report's print preview.
             report.ShowPreview();
-
         }
     }
 }

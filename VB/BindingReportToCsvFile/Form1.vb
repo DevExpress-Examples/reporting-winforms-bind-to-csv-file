@@ -1,14 +1,6 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Data
-Imports System.Drawing
-Imports System.Linq
-Imports System.Text
-Imports System.Windows.Forms
-Imports DevExpress.XtraReports.UI
-Imports DevExpress.DataAccess.Excel
+﻿Imports DevExpress.DataAccess.Excel
 Imports DevExpress.XtraReports.Configuration
+Imports DevExpress.XtraReports.UI
 
 Namespace BindingReportToCsvFile
     Partial Public Class Form1
@@ -23,14 +15,16 @@ Namespace BindingReportToCsvFile
             Dim report As New XtraReport()
 
             ' Create a new Excel data source.
-            Dim excelDataSource As New ExcelDataSource()
-            excelDataSource.FileName = "..//..//Northwind.csv"
+            Dim excelDataSource As New ExcelDataSource With {
+                .FileName = "..//..//Northwind.csv"
+            }
 
             ' Specify import settings.
-            Dim csvSourceOptions As New CsvSourceOptions()
-            csvSourceOptions.DetectEncoding = True
-            csvSourceOptions.DetectNewlineType = True
-            csvSourceOptions.DetectValueSeparator = True
+            Dim csvSourceOptions As New CsvSourceOptions With {
+                .DetectEncoding = True,
+                .DetectNewlineType = True,
+                .DetectValueSeparator = True
+            }
             excelDataSource.SourceOptions = csvSourceOptions
 
             ' Define the data source schema.
@@ -54,8 +48,9 @@ Namespace BindingReportToCsvFile
             report.DataSource = excelDataSource
 
             ' Add a detail band to the report.
-            Dim detailBand As New DetailBand()
-            detailBand.Height = 50
+            Dim detailBand As New DetailBand With {
+                .Height = 50
+            }
             report.Bands.Add(detailBand)
 
             ' Create a new label.

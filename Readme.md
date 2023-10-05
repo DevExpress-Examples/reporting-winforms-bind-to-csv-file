@@ -1,22 +1,14 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128598518/17.2.3%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T311958)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+# Reporting for WinForms - Bind a Report to a CSV File at Runtime
 
-* [Form1.cs](./CS/BindingReportToCsvFile/Form1.cs) (VB: [Form1.vb](./VB/BindingReportToCsvFile/Form1.vb))
-* [Program.cs](./CS/BindingReportToCsvFile/Program.cs) (VB: [Program.vb](./VB/BindingReportToCsvFile/Program.vb))
-<!-- default file list end -->
-# How to: Bind a Report to a CSV file at runtime
+This example creates a new blank report at runtime and binds the report to data obtained from a CSV file.
 
+The [ExcelDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Excel.ExcelDataSource) class instance is used to retrieve data from a CSV file. The data source schema is defined in code.
 
-<p>This code example demonstrates how to create a new blank report at runtime (an instance of the <strong>XtraReport</strong> class), bind it to data obtained from a CSV file, and then, fill the report with a <strong>DetailBand</strong> containing an <strong>XRLabel</strong> to show data from this file.</p>
-<p>To bind a report to a CSV file, create a new instance of the <strong>ExcelDataSource</strong> class and specify the full path to the source file using the <strong>FileName</strong> property. Then, specify required settings used to extract data from the file and manually define the data source schema. Finally, assign the created data source to the report using the <strong>DataSource</strong> property.</p>
-<p>In this example, an <strong>XRLabel</strong> is added to the report to display data of one data field.<br><br></p>
-<p>Starting with v.17.2, the report uses <a href="https://documentation.devexpress.com/XtraReports/119236/Creating-Reports-in-Visual-Studio/Detailed-Guide-to-DevExpress-Reporting/Providing-Data-to-Reports/Data-Binding-Overview/Data-Binding-Modes">expression bindings</a> to provide data to controls. You can switch to the legacy binding mode by setting the <a href="https://documentation.devexpress.com/XtraReports/DevExpress.XtraReports.Configuration.UserDesignerOptions.DataBindingMode.property">UserDesignerOptions.DataBindingMode</a> property to <strong>Bindings </strong>at the application startup.</p>
+## Files to Review
 
-<br/>
+- [Form1.cs](./CS/BindingReportToCsvFile/Form1.cs) (VB: [Form1.vb](./VB/BindingReportToCsvFile/Form1.vb))
 
+## Documentation
 
+- [Bind Reports to Data](https://docs.devexpress.com/XtraReports/15034/detailed-guide-to-devexpress-reporting/bind-reports-to-data)
+- [Use ExcelDataSource](https://docs.devexpress.com/CoreLibraries/403660/devexpress-data-library/data-sources/use-excel-data-source)
